@@ -2,16 +2,17 @@ from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 from app import app
-from app.forms import LoginForm
+from app.forms import LoginForm, RegistrationForm
 from app.models import User
 
 
-@app.route('/')
-@app.route('/index')
+
+@app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
+	register_form = RegistrationForm()
 	users = User.query.all()
-	return render_template('index.html', title='User Page', users=users)
+	return render_template('index.html', title='User Page', users=users, form1=register_form)
 
 
 @app.route('/login', methods=['GET', 'POST'])
