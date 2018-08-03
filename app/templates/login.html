@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block app_content %}
+<style type="text/css">
+	.login {
+		margin: 0 auto;
+		width: 25%;
+	}
+</style>
+<div class="login">
 	<h1>Sign in</h1>
 	<form action="" method="post" novalidate="">
 		{{ form.hidden_tag() }}
@@ -25,4 +32,5 @@
 			{{ form.submit() }}
 		</p>
 	</form>
+</div>
 {% endblock %}
