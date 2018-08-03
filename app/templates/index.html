@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div>
+		<h1>Hi, {{ current_user.username }}!</h1>
+		<h2>Registered users:</h2>
+		
+		{% for user in users %}
+		<p>{{ user.username }}</p>
+		{% endfor %}
+		
+		
+	</div>
+	
+
+	<div>
+		<h1>Register New User</h1>
+		<form action="" method="post">
+			{{ form1.hidden_tag() }}
+			<p>
+				{{ form1.username.label }}<br>
+				{{ form1.username(size=32) }}<br>
+				{% for error in form1.username.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+			<p>
+				{{ form1.email.label }}<br>
+				{{ form1.email(size=32) }}<br>
+				{% for error in form1.email.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+			<p>
+				{{ form1.password.label }}<br>
+				{{ form1.password(size=32) }}<br>
+				{% for error in form1.password.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+			<p>
+				{{ form1.password2.label }}<br>
+				{{ form1.password2(size=32) }}<br>
+				{% for error in form1.password2.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+			<p>{{ form1.submit() }}</p>
+		</form>
+	</div>
+
+	<div>
+		<h1>Delete User</h1>
+		<form action="" method="post">
+			{{ form2.hidden_tag() }}
+			<p>
+				{{ form2.name_del_user.label }}<br>
+				{{ form2.name_del_user(size=32) }}<br>
+				{% for error in form2.name_del_user.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+			<p>{{ form2.delete() }}</p>
+		</form>
+	</div>
+{% endblock %}
