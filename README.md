@@ -44,8 +44,11 @@
 
 For Login you must be logged user. For first login you can use an admin account:
 
-Username: admin
-Password: 1111
+##### Username:
+admin
+
+##### Password: 
+1111
 
 #### Register New User
 
@@ -53,5 +56,5 @@ Registration of a new user takes place on the main page. Validators control the 
 
 #### Delete users
 
-You enter username in the delete form and press to "Delete".
-###### Note: you can't delete own and "admin" account
+You enter username in the delete form and press to "Delete User".
+### Note: you can't delete own and "admin" account
