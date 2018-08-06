@@ -1,6 +1,6 @@
-## WebServise
+## WebService
 
-``WebServise`` is a simple application for user management.
+``WebService`` is a simple application for user management.
 
 
 ### Basic functions:
